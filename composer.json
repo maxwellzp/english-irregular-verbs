@@ -1,0 +1,19 @@
+{
+    "name": "maxwellzp/english-irregular-verbs",
+    "description": "PHP OOP wrapper for English irregular verbs",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Maxwellzp\\EnglishIrregularVerbs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maksim Evtyagin",
+            "email": "evtyagin.maksim@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
