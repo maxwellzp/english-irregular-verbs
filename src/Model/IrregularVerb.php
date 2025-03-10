@@ -5,11 +5,26 @@ namespace Maxwellzp\EnglishIrregularVerbs\Model;
 class IrregularVerb
 {
     public function __construct(
-        public string $baseForm,
-        public string $pastSimple,
-        public string $pastParticiple,
+        private string $baseForm,
+        private string $pastSimple,
+        private string $pastParticiple,
     )
     {
+    }
+
+    public function getBaseForm(): string
+    {
+        return $this->baseForm;
+    }
+
+    public function getPastSimple(): string
+    {
+        return $this->pastSimple;
+    }
+
+    public function getPastParticiple(): string
+    {
+        return $this->pastParticiple;
     }
 }
 

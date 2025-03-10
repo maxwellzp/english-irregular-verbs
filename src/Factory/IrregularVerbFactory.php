@@ -8,18 +8,27 @@ use Maxwellzp\EnglishIrregularVerbs\Model\IrregularVerb;
 class IrregularVerbFactory
 {
     private array $verbs = [];
-    public function __construct(
-        private readonly CsvDataProvider $csvDataProvider,
-    )
+    private readonly CsvDataProvider $csvDataProvider;
+
+    public function __construct()
     {
+        $this->csvDataProvider = new CsvDataProvider();
         $this->verbs = $this->csvDataProvider->getAll();
     }
 
-    public function getAll(): array {
+    /**
+     * @return array
+     */
+    public function getAll(): array
+    {
         return $this->verbs;
     }
 
-    public function getRandomOne(): IrregularVerb {
+    /**
+     * @return IrregularVerb
+     */
+    public function getRandomOne(): IrregularVerb
+    {
         return $this->verbs[array_rand($this->verbs)];
     }
 }

@@ -6,7 +6,7 @@ use Maxwellzp\EnglishIrregularVerbs\Model\IrregularVerb;
 
 class CsvDataProvider
 {
-    const FILE_PATH = 'data/irregular_verbs.csv';
+    const FILE_PATH = __DIR__ . '/../../' . '/data/irregular_verbs.csv';
 
     /**
      * @return array
