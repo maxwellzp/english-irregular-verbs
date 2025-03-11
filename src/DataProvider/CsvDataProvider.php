@@ -29,14 +29,16 @@ class CsvDataProvider
      */
     public static function getAll(): array
     {
-        return array_map(function ($item) {
+        return array_map(
+            function ($item) {
 
-            return new IrregularVerb(
-                $item[0],
-                $item[1],
-                $item[2]
-            );
+                return new IrregularVerb(
+                    $item[0],
+                    $item[1],
+                    $item[2]
+                );
 
-        }, self::readFile());
+            }, self::readFile()
+        );
     }
 }

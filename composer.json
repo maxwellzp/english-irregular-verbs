@@ -15,5 +15,11 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    },
+    "scripts": {
+        "psr-detect-violations": "./vendor/bin/phpcs src/",
+        "psr-auto-correct": "./vendor/bin/phpcbf src/"
+    }
 }

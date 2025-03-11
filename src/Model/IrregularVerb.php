@@ -8,8 +8,7 @@ class IrregularVerb
         private string $baseForm,
         private string $pastSimple,
         private string $pastParticiple,
-    )
-    {
+    ) {
     }
 
     public function getBaseForm(): string

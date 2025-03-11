@@ -33,13 +33,15 @@ class IrregularVerbFactory
     }
 
     /**
-     * @param int $num
+     * @param  int $num
      * @return array
      */
     public function getRandomSet(int $num): array
     {
-        return array_map(function ($id) {
-            return $this->verbs[$id];
-        }, array_rand($this->verbs, $num));
+        return array_map(
+            function ($id) {
+                return $this->verbs[$id];
+            }, array_rand($this->verbs, $num)
+        );
     }
 }
