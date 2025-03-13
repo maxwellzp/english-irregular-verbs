@@ -12,14 +12,14 @@ class IrregularVerbFactory
 
     public function __construct()
     {
-        $this->csvDataProvider = new CsvDataProvider();
+        $this->csvDataProvider = new CsvDataProvider(__DIR__ . '/../../' . '/data/irregular_verbs.csv');
         $this->verbs = $this->csvDataProvider->getAll();
     }
 
     /**
      * @return array
      */
-    public function getAll(): array
+    public function getAllVerbs(): array
     {
         return $this->verbs;
     }
@@ -38,6 +38,9 @@ class IrregularVerbFactory
      */
     public function getRandomSet(int $num): array
     {
+        if ($num < 2 || $num > count($this->verbs)) {
+            throw new \Exception(sprintf("The value of \$num variable must be between %d and %d", 2, count($this->verbs)));
+        }
         return array_map(
             function ($id) {
                 return $this->verbs[$id];

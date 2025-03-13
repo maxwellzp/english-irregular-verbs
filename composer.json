@@ -8,6 +8,11 @@
             "Maxwellzp\\EnglishIrregularVerbs\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Maxwellzp\\EnglishIrregularVerbs\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Maksim Evtyagin",
@@ -16,10 +21,12 @@
     ],
     "minimum-stability": "stable",
     "require-dev": {
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "^12.0"
     },
     "scripts": {
         "psr-detect-violations": "./vendor/bin/phpcs src/",
-        "psr-auto-correct": "./vendor/bin/phpcbf src/"
+        "psr-auto-correct": "./vendor/bin/phpcbf src/",
+        "test": "./vendor/bin/phpunit"
     }
 }

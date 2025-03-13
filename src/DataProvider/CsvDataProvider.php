@@ -6,15 +6,20 @@ use Maxwellzp\EnglishIrregularVerbs\Model\IrregularVerb;
 
 class CsvDataProvider
 {
-    const FILE_PATH = __DIR__ . '/../../' . '/data/irregular_verbs.csv';
+    public function __construct(private readonly string $filePath)
+    {
+        if (!file_exists($this->filePath) || !is_readable($this->filePath)) {
+            throw new \Exception("File does not exist or is not readable");
+        }
+    }
 
     /**
      * @return array
      */
-    private static function readFile(): array
+    private function readFile(): array
     {
         $content = [];
-        if (($open = fopen(self::FILE_PATH, "r")) !== false) {
+        if (($open = fopen($this->filePath, "r")) !== false) {
             while (($data = fgetcsv($open, null, ",")) !== false) {
                 $content[] = $data;
             }
@@ -27,7 +32,7 @@ class CsvDataProvider
     /**
      * @return IrregularVerb[]
      */
-    public static function getAll(): array
+    public function getAll(): array
     {
         return array_map(
             function ($item) {
