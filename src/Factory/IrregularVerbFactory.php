@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Maxwellzp\EnglishIrregularVerbs\Factory;
 
 use Maxwellzp\EnglishIrregularVerbs\DataProvider\CsvDataProvider;
@@ -33,18 +35,22 @@ class IrregularVerbFactory
     }
 
     /**
-     * @param  int $num
+     * @param int $num
      * @return array
+     * @throws \Exception
      */
     public function getRandomSet(int $num): array
     {
         if ($num < 2 || $num > count($this->verbs)) {
-            throw new \Exception(sprintf("The value of \$num variable must be between %d and %d", 2, count($this->verbs)));
+            throw new \Exception(
+                sprintf("The value of \$num variable must be between %d and %d", 2, count($this->verbs))
+            );
         }
         return array_map(
             function ($id) {
                 return $this->verbs[$id];
-            }, array_rand($this->verbs, $num)
+            },
+            array_rand($this->verbs, $num)
         );
     }
 }

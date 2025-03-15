@@ -7,13 +7,15 @@ use PHPUnit\Framework\TestCase;
 
 class IrregularVerbTest extends TestCase
 {
-    public function testClassConstructorAndGetters(): void {
+    public function testClassConstructorAndGetters(): void
+    {
         $verb = new IrregularVerb('do', 'did', 'done');
         $this->assertSame('do', $verb->getBaseForm());
         $this->assertSame('did', $verb->getPastSimple());
         $this->assertSame('done', $verb->getPastParticiple());
     }
-    public function testGettersReturnStringType(): void {
+    public function testGettersReturnStringType(): void
+    {
         $verb = new IrregularVerb('do', 'did', 'done');
         $this->assertIsString($verb->getBaseForm());
         $this->assertIsString($verb->getPastSimple());

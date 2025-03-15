@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Maxwellzp\EnglishIrregularVerbs\Model;
 
 class IrregularVerb
 {
     public function __construct(
-        private string $baseForm,
-        private string $pastSimple,
-        private string $pastParticiple,
+        private readonly string $baseForm,
+        private readonly string $pastSimple,
+        private readonly string $pastParticiple,
     ) {
     }
 
@@ -26,4 +28,3 @@ class IrregularVerb
         return $this->pastParticiple;
     }
 }
-

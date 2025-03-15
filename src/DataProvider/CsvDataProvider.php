@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Maxwellzp\EnglishIrregularVerbs\DataProvider;
 
 use Maxwellzp\EnglishIrregularVerbs\Model\IrregularVerb;
@@ -42,8 +44,8 @@ class CsvDataProvider
                     $item[1],
                     $item[2]
                 );
-
-            }, self::readFile()
+            },
+            self::readFile()
         );
     }
 }

@@ -5,3 +5,7 @@
 .phpunit.result.cache
 terminal.txt
 /coverage-html/
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###
