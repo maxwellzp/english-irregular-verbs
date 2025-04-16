@@ -3,8 +3,10 @@
 namespace Maxwellzp\EnglishIrregularVerbs\Tests\Unit\Model;
 
 use Maxwellzp\EnglishIrregularVerbs\Model\IrregularVerb;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(IrregularVerbTest::class)]
 class IrregularVerbTest extends TestCase
 {
     public function testClassConstructorAndGetters(): void
