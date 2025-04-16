@@ -14,12 +14,18 @@ composer require maxwellzp/english-irregular-verbs
 
 ## Usage
 ```PHP
-use Maxwellzp\EnglishIrregularVerbs\Factory\IrregularVerbFactory;
+<?php
 
-require_once 'vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
-$factory = new IrregularVerbFactory();
-$irregularVerbs = $factory->getAllVerbs();
+use Maxwellzp\EnglishIrregularVerbs\DataProvider\CsvDataProvider;
+use Maxwellzp\EnglishIrregularVerbs\Repository\IrregularVerbRepository;
+
+$dataProvider = new CsvDataProvider(__DIR__ . '/data/irregular_verbs.csv');
+$repository = new IrregularVerbRepository($dataProvider);
+
+$verbs = $repository->getRandomSet(5);
+
 ```
 
 ## Running Tests
